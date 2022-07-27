@@ -23,6 +23,9 @@ let highscore = 0;
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
+const displayNumber = function (number) {
+  document.querySelector('.number').textContent = number;
+};
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -30,7 +33,7 @@ document.querySelector('.check').addEventListener('click', function () {
     displayMessage('No Number');
   } else if (guess === secretNumber) {
     displayMessage('Correct Number');
-    document.querySelector('.number').textContent = secretNumber;
+    displayNumber(secretNumber);
 
     //when player wins change css
     document.querySelector('body').style.backgroundColor = '#60b347';
